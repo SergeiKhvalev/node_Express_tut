@@ -1,0 +1,1 @@
+Here is write in text: Hello Sergei, this is second_content file for read with fs module appended text

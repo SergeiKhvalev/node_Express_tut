@@ -1,0 +1,70 @@
+node js:
+1) environment to run JS outdide browser
+2)Build on Chrome V8 engine
+3) big community
+4) Full stack (help to build front-end and back-end)
+
+differencies between node js and browser
+browser 		node     
+DOM			No DOM
+Window			No Window
+Interactive Apps	Server Side Apps (NO UI)
+No Filesystem		FileSystem
+Fragmentation		Versions
+ES6			        CommonJS
+
+CommonJS is CommonJS is a module system for JavaScript that was developed to allow modular and organized code in server-side environments, particularly in the context of Node.js. It provides a way to define and organize the structure of JavaScript code into reusable modules, which helps manage dependencies, improve code maintainability, and facilitate code sharing between different parts of an application.
+Key features of the CommonJS module system include:
+   - Exports and Imports: CommonJS modules use the module.exports object to define what parts of a module should be made available
+    use in other modules. Other modules can then use the require function to import and use the exported values.
+   - Synchronous Loading: In the CommonJS module system, modules are loaded synchronously, which means that the require function blocks the execution of the program until the required module is loaded and executed. This synchronous behavior is well-suited for server-side applications where file I/O operations are common.
+    - Single Exports: Each CommonJS module can only export a single value or object using module.exports. If you need to export multiple values, you usually wrap them in an object.
+In summary, CommonJS is a module system that facilitates modular programming in JavaScript, particularly in server-side environments like Node.js, by providing a way to define, import, and export reusable code modules.
+
+
+
+
+
+
+
+
+install node js LTS version before start. To check if node had been installed in prompt node --version
+When we works with browser. Browser able to run and check our code. With node we also can do it with help of Repl or CLI 
+(to run app code in node). Repl to use it co in prompt type node => write code on JS and run it in node. CTRL+C to exit from Repl
+
+5) we can run js app through intellije terminal => navigate to directory with .js file which need to be run, in terminal "node name.js"
+
+---------------------------------------------------
+GLOBAL variables  CONCEPT ---- in node No Windows
+GLOBAL variables means it is available everywhere in project
+
+__dirname  - path tp current directory
+__filename - file name
+require - function to use modules (CommonJS)
+module - info about current module (file)
+process - info about env where the program is being executed
+
+-------------------------
+file in CommonJS need to consider as module. //each file in CommonJS considering as module => we can export content of that module by defining what need to export => module.exports
+
+In JS bunch of build in modules:
+- OS
+- PATH
+- FS
+- HTTP
+
+// npm is global command, comes with node. help manage dependancies. npm --v (to check npm version)
+local dependency - used for only inside particular project
+        npm i <pakageName> (local dependency are preferable)
+global dependency - used it in any progect
+        npm install -g <packageName>
+        sudo npm install -g <packageName> (for mac)
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!package.json file!!!!!!
+package.json file - is manifest file (storage of important info about project/package)
+// manual approach create package.json -> creat it in root, write in all needed properties
+//npm init (step by step ask questions, press enter to skip)
+//npm init -y (everything by default)
+
+all installed dependancies will appear in package.json file + we will get node_modules folder, where all dependencies are stored
