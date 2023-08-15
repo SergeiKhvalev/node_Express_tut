@@ -68,3 +68,38 @@ package.json file - is manifest file (storage of important info about project/pa
 //npm init -y (everything by default)
 
 all installed dependancies will appear in package.json file + we will get node_modules folder, where all dependencies are stored
+
+from package.json:
+- dependencies: libraries which use our app when its worjing
+-devdependancies: libraries we use de develop our app
+- scripts: we use to set up commands for our app. Example: if we put  "start": "node lodash_module.js" => we can use node lodash_module.js to start our app
+
+
+to install devdependancies we an use: npm i nodemon --save-dev . devdependancies we need during development process => when we finish developing process, for running app no need devdependancies, app will use just dependancies from package.json
+
+
+nodemon devdependancy as start commant help to restart app automaticaly with every changes in app => no need to type node ..... again and again
+
+to uninstall command => npm uninstall module name
+
+
+package-lock.json - need for need to store versiona of all packages, not only for dependancies - it is crucial to keep app up and running. The package-lock.json file is used in projects that utilize the Node.js package manager, npm (Node Package Manager). It serves a specific purpose related to managing project dependencies and ensuring consistency across different installations.Here's what the package-lock.json file is for:
+ Dependency Locking: When you install packages in a Node.js project using npm, it generates a package-lock.json file. This file contains a detailed, version-specific record of all the packages and their exact versions that were installed in your project. This ensures that the same versions of packages are installed consistently across different development environments and deployments.
+ Version Reproducibility: The package-lock.json file helps maintain version reproducibility. Since it records the exact versions of packages used when a project was last installed, it prevents unintended changes in package versions when the project is moved between environments or over time. This is particularly important to avoid compatibility issues and unexpected behavior.
+  Faster Installation: The package-lock.json file speeds up the installation of dependencies. When you install packages, npm can reference the package-lock.json file to determine the exact versions needed, rather than needing to fetch and resolve the versions each time. This leads to faster and more consistent dependency installations.
+ Security: The package-lock.json file can also play a role in security. Since it pins the exact versions of packages, it prevents malicious code or vulnerabilities from being introduced via unexpected package updates.
+It's important to note that you should commit the package-lock.json file to your version control system (e.g., Git) along with your project's source code. This ensures that all collaborators and deployment environments are using the same dependencies with the same versions. When someone else clones your repository or you deploy your project, npm can use the information in the package-lock.json file to recreate the exact dependency tree you had when you developed the project.
+
+-----------------------------------------------------------------------------------------------------------------------
+core concepts for node app
+
+1) event loop (that concept very important in JS, because JS in single threaded programm language).  JS is synchronous and single Threaded. All code read line by line, and next line execution will wait until previous will be completed => because it is single threaded. In BROWSER we have API which off load => give us abilite to execute code, which not time consuming without waiting when time consuming code will be executed:
+An event loop is a fundamental concept in computer programming and software development, particularly in the context of concurrent or asynchronous programming. It is a control structure that manages and processes events in a program, allowing it to respond to various input sources without blocking the entire execution. In a traditional, sequential program, code is executed line by line, and the program waits for each operation to complete before moving on to the next. This can be inefficient, especially when dealing with tasks that involve waiting for external events, such as user input, network communication, or timers. An event loop, on the other hand, enables a program to efficiently handle multiple tasks concurrently by waiting for events to occur and then dispatching those events to appropriate handlers. It operates in a continuous loop, checking for events, handling them, and then moving on to the next event. This allows the program to make progress even while waiting for potentially time-consuming operations to complete.
+1)Initialize: Set up initial state and event handlers.
+2)Enter Loop: Start an infinite loop.
+3)Wait for Events: The loop waits for events to occur. Events can come from various sources such as user input, timers, network sockets, etc.
+4)Dispatch Event: When an event occurs, the event loop dispatches it to the appropriate event handler or callback function.
+5)Handle Event: The event handler processes the event and performs the necessary actions. This might involve updating the program's state, initiating further asynchronous operations or responding to user input.
+6) Repeat: After handling an event, the event loop returns to waiting for more events and continues the cycle.
+
+

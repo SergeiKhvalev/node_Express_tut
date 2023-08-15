@@ -1,1 +1,1 @@
-Here is the results: Hello Sergei, this is first_content file for read with fs moduleKhvalev1, Hello Sergei, this is second_content file for read with fs moduleSergei1
+THIS IS AWSOME Hello Sergei, this is second_content file for read with fs module. Thank you for using Promise, Hello Sergei, this is first_content file for read with fs module
